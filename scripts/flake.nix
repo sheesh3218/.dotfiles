@@ -1,5 +1,5 @@
 {
-  description = "Concord configuration.";
+  description = "Garden configuration.";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -29,7 +29,7 @@
         }:
         {
           security.pam.enableSudoTouchIdAuth = true;
-          users.users.morgan.home = "/Users/morgan";
+          users.users.daisy.home = "/Users/daisy";
           home-manager.backupFileExtension = "backup";
           nix.configureBuildUsers = true;
           nix.useDaemon = true;
@@ -372,7 +372,7 @@
         };
     in
     {
-      darwinConfigurations."concord" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."garden" = nix-darwin.lib.darwinSystem {
         modules = [
           configuration
           nix-homebrew.darwinModules.nix-homebrew
@@ -380,17 +380,17 @@
             nix-homebrew = {
               enable = true;
               enableRosetta = true;
-              user = "morgan";
+              user = "daisy";
             };
           }
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.morgan = import ./home.nix;
+            home-manager.users.daisy = import ./home.nix;
           }
         ];
       };
-      darwinPackages = self.darwinConfigurations."concord".pkgs;
+      darwinPackages = self.darwinConfigurations."garden".pkgs;
     };
 }
