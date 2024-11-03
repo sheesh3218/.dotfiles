@@ -1,7 +1,7 @@
 source <(curl -s https://raw.githubusercontent.com/MorganKryze/bash-toolbox/main/src/prefix.sh)
 
 info "[1/6] Updating the hostname..."
-NEW_HOSTNAME="concord"
+NEW_HOSTNAME="garden"
 CURRENT_HOSTNAME=$(scutil --get HostName)
 if [ "$CURRENT_HOSTNAME" != "$NEW_HOSTNAME" ]; then
     sudo scutil --set HostName "$NEW_HOSTNAME" || error "Failed to set HostName."
@@ -40,7 +40,7 @@ if [ -d "$HOME/.dotfiles" ]; then
     git submodule update --init --recursive || error "Failed to update the submodules."
 else
     info "Cloning the .dotfiles repository..."
-    git clone --recurse-submodules https://github.com/MorganKryze/.dotfiles.git "$HOME/.dotfiles" || error "Failed to clone the .dotfiles repository."
+    git clone --recurse-submodules https://github.com/sheesh3218/.dotfiles.git "$HOME/.dotfiles" || error "Failed to clone the .dotfiles repository."
     cd "$HOME/.dotfiles" || error "Failed to change directory to $HOME/.dotfiles."
 
     info "Creating the .env file..."
@@ -54,10 +54,10 @@ if ! command -v nix &>/dev/null; then
     acknoledge "Restart a new terminal window and run this script again."
 elif ! command -v brew &>/dev/null; then
     info "[6/6] Nix is already installed. Proceeding to the config setup..."
-    nix run nix-darwin --experimental-features "nix-command flakes" -- switch --flake ~/.dotfiles/scripts#concord --impure || error "Failed to setup the Concord flake."
+    nix run nix-darwin --experimental-features "nix-command flakes" -- switch --flake ~/.dotfiles/scripts#garden --impure || error "Failed to setup the Concord flake."
 else
     info "[6/6] Nix and Nix-Darwin are already installed. Rebuilding the environment..."
-    darwin-rebuild switch --flake ~/.dotfiles/scripts#concord --impure || error "Failed to rebuild the environment."
+    darwin-rebuild switch --flake ~/.dotfiles/scripts#garden --impure || error "Failed to rebuild the environment."
 fi
 
 success "Bootstrap completed successfully. Enjoy! :3"
