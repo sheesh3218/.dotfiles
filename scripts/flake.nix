@@ -39,14 +39,12 @@
             pkgs.mkalias
 
             # Core utilities
-            pkgs.openssh
+            pkgs.openssh 
             pkgs.nmap
-            pkgs.gmp
             pkgs.curl
             pkgs.wget
 
             # Terminal
-            pkgs.gitflow
             pkgs.nixd
             pkgs.nixfmt-rfc-style
           ];
@@ -67,33 +65,17 @@
             brews = [
               # Core utilities
               "p7zip"
-              "poppler"
               "pkg-config"
               "graphviz"
               "mailsy"
 
-              # Langs
-              "php"
-              "pnpm"
-              "openjdk"
-              "gradle"
-
               # Terminal
               "neofetch"
-              "htop"
-              "btop"
               "lsd"
-              "z"
 
               # Dockers
               "lazydocker"
               "postgresql@14"
-
-              # Kubernetes
-              "kubernetes-cli"
-              "helm"
-              "k9s"
-              "kind"
 
               # Virtualization
               "qemu"
@@ -127,8 +109,7 @@
               "blockblock"
               "reikey"
               "bitwarden"
-              # "protonvpn"
-              "surfshark"
+              "protonvpn"
 
               # Browsers
               "arc"
@@ -138,7 +119,6 @@
               # Dev apps
               "visual-studio-code"
               "devtoys"
-              "android-studio"
               "mactex"
               "warp"
               "applite"
@@ -159,35 +139,27 @@
 
               # Media
               "iina"
-              "imageoptim"
               "inkscape"
               "flameshot"
-              "handbrake"
               "adobe-acrobat-reader"
               "obs"
 
               # Communication
               "thunderbird@esr"
+              "microsoft-outlook"
               "signal"
               "discord"
-              "telegram"
 
               # Utilities
               "onyx"
-              "appcleaner"
               "the-unarchiver"
               "stats"
               "keyboardcleantool"
-              "mediamate"
               "lunar"
               "parsec"
               "jdownloader"
 
               # Games & Emulators
-              "steam"
-              "crossover"
-              "whisky"
-              "battle-net"
               "modrinth"
             ];
 
