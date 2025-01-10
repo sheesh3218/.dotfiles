@@ -9,9 +9,6 @@
 # # Source the oh-my-zsh script
 # source $ZSH/oh-my-zsh.sh
 
-# Display system information using neofetch
-neofetch
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -26,10 +23,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-# Raspberry Pi Wizard executable
-source /Users/morgan/Documents/02-dev/02-git/01-morgankryze/RaspberryPi-Setup-Wizard/src/rpi-wizard.sh
-export RPI_SETUP_WIZARD_PATH=/Users/morgan/Documents/02-dev/02-git/01-morgankryze/RaspberryPi-Setup-Wizard
 
 # >>>> Vagrant command completion (start)
 fpath=(/opt/vagrant/embedded/gems/gems/vagrant-2.4.1/contrib/zsh $fpath)

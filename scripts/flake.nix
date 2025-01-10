@@ -54,7 +54,7 @@
             onActivation.cleanup = "zap";
             enable = true;
             onActivation.autoUpdate = true;
-            onActivation.upgrade = true;
+            onActivation.upgrade = false;
 
             # Taps
             taps = [
@@ -72,6 +72,7 @@
               # Terminal
               "neofetch"
               "lsd"
+              "platformio"
 
               # Dockers
               "lazydocker"
@@ -93,6 +94,9 @@
               # Docker
               "docker"
               "miniconda"
+              "utm" #VM WINDOWS
+              "crystalfetch" #Recup images windows
+            
 
               # Virtualization
               "vagrant"
@@ -109,7 +113,7 @@
               "blockblock"
               "reikey"
               "bitwarden"
-              "protonvpn"
+              "surfshark"
 
               # Browsers
               "arc"
@@ -122,6 +126,7 @@
               "mactex"
               "warp"
               "applite"
+              
 
               # Productivity
               "notion"
@@ -133,7 +138,7 @@
               # 3D & Design
               "autodesk-fusion"
               "orcaslicer"
-              # "lycheeslicer"
+              "lycheeslicer"
               "kicad"
               "drawio"
 
@@ -187,7 +192,7 @@
                       pathsToLink = "/Applications";
                     }
                   }/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-                  while read src; do
+                  while read -r src; do
                     app_name=$(basename "$src")
                     echo "copying $src" >&2
                     ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
@@ -205,7 +210,7 @@
                 autohide-time-modifier = 1.0;
                 autohide-delay = 0.0;
                 enable-spring-load-actions-on-all-items = true;
-                expose-group-by-app = false;
+                expose-group-apps = false;
                 largesize = 90;
                 launchanim = true;
                 magnification = true;
@@ -320,7 +325,6 @@
             optimise.automatic = true;
             nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
             settings = {
-              auto-optimise-store = true;
               experimental-features = [
                 "nix-command"
                 "flakes"
