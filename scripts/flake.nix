@@ -96,6 +96,7 @@
               "miniconda"
               "utm" #VM WINDOWS
               "crystalfetch" #Recup images windows
+              "whisky"
             
 
               # Virtualization
