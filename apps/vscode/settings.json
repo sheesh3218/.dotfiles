@@ -273,11 +273,13 @@
 
   // Workbench
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Tokyo Night Gogh",
+  "workbench.colorTheme": "Night Owl",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.empty.hint": "hidden",
   "workbench.editorAssociations": {
-    "*.svg": "default"
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.svg": "default",
+    "{git,gitlens,git-graph}:/**/*.{md,csv,svg}": "default"
   },
   "workbench.sideBar.location": "right",
 

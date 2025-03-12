@@ -28,11 +28,10 @@
           ...
         }:
         {
-          security.pam.enableSudoTouchIdAuth = true;
+          security.pam.services.sudo_local.touchIdAuth = true;
           users.users.daisy.home = "/Users/daisy";
           home-manager.backupFileExtension = "backup";
-          nix.configureBuildUsers = true;
-          nix.useDaemon = true;
+
 
           environment.systemPackages = [
             # App aliases
@@ -55,10 +54,12 @@
             enable = true;
             onActivation.autoUpdate = true;
             onActivation.upgrade = false;
+            onActivation.extraFlags = [ "--verbose" ];
 
             # Taps
             taps = [
               "koekeishiya/formulae"
+              "osrf/simulation"
             ];
 
             # Non-cask apps
@@ -68,21 +69,30 @@
               "pkg-config"
               "graphviz"
               "mailsy"
+              "micro"
 
               # Terminal
               "neofetch"
               "lsd"
-              "platformio"
 
               # Dockers
               "lazydocker"
               "postgresql@14"
+              "lazygit"
 
               # Virtualization
               "qemu"
 
               # Games
               "cmatrix"
+
+              # Engineering
+              "matlab2tikz"
+
+              # ROS
+              "socat"
+              "python@3.9"
+              "gazebo11"
 
               # Tiling managers
               "koekeishiya/formulae/yabai"
@@ -93,19 +103,19 @@
             casks = [
               # Docker
               "docker"
-              "miniconda"
               "utm" #VM WINDOWS
               "crystalfetch" #Recup images windows
               "whisky"
+              "arduino-ide"
             
 
               # Virtualization
-              "vagrant"
               "virtualbox"
               "raspberry-pi-imager"
               "crystalfetch"
               "balenaetcher"
               "virtualbuddy"
+              "xquartz"
 
               # ObjectiveSee & Safety
               "oversight"
@@ -164,6 +174,7 @@
               "lunar"
               "parsec"
               "jdownloader"
+              "lm-studio"
 
               # Games & Emulators
               "modrinth"
@@ -334,12 +345,6 @@
             extraOptions = ''
               extra-platforms = x86_64-darwin aarch64-darwin
             '';
-          };
-
-          services = {
-            nix-daemon = {
-              enable = true;
-            };
           };
 
           programs.zsh = {

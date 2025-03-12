@@ -1,25 +1,6 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
 
-# API keys
-source ~/.dotfiles/.env
-export OPENAI_API_KEY=$OPENAI_KEY
-export GITHUB_TOKEN=$GITHUB_KEY
-
-# zsh
-export ZSH="$HOME/.oh-my-zsh"
-
-# .NET
-export PATH="$PATH:/Users/morgan/.dotnet/tools"
-
-# Flutter
-export PATH="$PATH:/Users/morgan/Documents/02-dev/05-tools/flutter/bin"
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-
-# Rust
-#. "$HOME/.cargo/env"
-#. /opt/homebrew/etc/profile.d/z.sh
-
 # Java
 export JAVA_HOME=/opt/homebrew/opt/java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
@@ -31,14 +12,5 @@ export PATH=${PATH}:/usr/local/mysql/bin/
 export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
 
-# pnpm
-export PNPM_HOME="/Users/morgan/Library/pnpm"
-case ":$PATH:" in
-*":$PNPM_HOME:"*) ;;
-*) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+export CONDA_SOLVER=classic
+export PATH="~/.platformio/penv/bin:$PATH"

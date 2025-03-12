@@ -1,6 +1,6 @@
 [user]
-	email = neoyega@icloud.com
-	name = MorganKryze
+	email = sherylann.wilthien@edu.devinci.fr
+	name = sheesh3218
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
