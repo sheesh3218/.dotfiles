@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   home.username = "daisy";
@@ -31,5 +31,6 @@
     ".hushlogin".source = ./docs/assets/.hushlogin;
     ".curlrc".source = ./apps/curl/.curlrc;
   };
+  
   programs.home-manager.enable = true;
 }
