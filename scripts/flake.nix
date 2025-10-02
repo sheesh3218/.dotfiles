@@ -60,6 +60,9 @@
             taps = [
               "koekeishiya/formulae"
               "osrf/simulation"
+              "ros/groovy" #ROS 
+              "osrf/simulation" #ROS
+              "Homebrew/science" #ROS
             ];
 
             # Non-cask apps
@@ -97,6 +100,10 @@
               # Tiling managers
               "koekeishiya/formulae/yabai"
               "skhd"
+
+               # media
+              "gimp"
+              
             ];
 
             # Cask apps
@@ -128,7 +135,7 @@
 
               # Browsers
               "arc"
-              "zen-browser"
+              "zen"
               "tor-browser"
 
               # Dev apps
@@ -153,12 +160,14 @@
               "kicad"
               "drawio"
 
+
               # Media
               "iina"
               "inkscape"
               "flameshot"
               "adobe-acrobat-reader"
               "obs"
+              "gimp"
 
               # Communication
               "thunderbird@esr"
@@ -187,6 +196,7 @@
           # MacOS default settings
           # Documentation found at: https://mynixos.com/nix-darwin/options/system.defaults
           system = {
+            primaryUser = "daisy";
             stateVersion = 5;
             configurationRevision = self.rev or self.dirtyRev or null;
             startup.chime = false;
